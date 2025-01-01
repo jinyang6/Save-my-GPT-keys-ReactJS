@@ -1,7 +1,21 @@
 const { app, BrowserWindow, ipcMain, Tray, Menu } = require('electron');
-const path = require('node:path');
-const fs = require('node:fs');
-const keys_json_path = path.join(app.getAppPath(), 'data/keys.json');
+const path = require('path');
+const fs = require('fs');
+const keys_json_path = path.join(app.getPath('userData'), 'keys.json');
+
+// Read in the templete JSON file
+const template_json_path = path.join(app.getAppPath(), 'src/data/template.json');
+
+// Ensure the directory exists
+const keys_json_dir = path.dirname(keys_json_path);
+if (!fs.existsSync(keys_json_dir)) {
+  fs.mkdirSync(keys_json_dir, { recursive: true });
+}
+
+// Ensure the JSON file exists with template data
+if (!fs.existsSync(keys_json_path)) {
+  fs.copyFileSync(template_json_path, keys_json_path);
+}
 
 // Development mode check
 const isDev = process.env.NODE_ENV === 'development';
