@@ -20,6 +20,17 @@ if (!fs.existsSync(keys_json_path)) {
 // Development mode check
 const isDev = process.env.NODE_ENV === 'development';
 
+const getIconPath = () => {
+  const icon = 'icon.png'; // Define the asset variable
+  // if (isDev) {
+  //   return path.join(__dirname, '../assets', asset);
+  // } else {
+  //   // In production, assets are in the resources directory
+  //   return path.join(process.resourcesPath, 'assets', asset);
+  // }
+  return path.join(__dirname, '../assets', icon);
+};
+
 let mainWindow = null; // the main window object
 let tray = null; // the tray object
 
@@ -35,7 +46,7 @@ const createWindow = () => {
     width: 600,
     height: 800,
     resizable: false,
-    icon: path.join(app.getAppPath(), 'assets/icon.png'),
+    icon: getIconPath(),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -85,7 +96,7 @@ app.whenReady().then(() => {
   createWindow();
 
   //create the tray
-  tray = new Tray(path.join(app.getAppPath(), 'assets/icon.png'));
+  tray = new Tray(getIconPath());
   const contextMenu = Menu.buildFromTemplate([
     {
       label: 'Show App', click: function () {
