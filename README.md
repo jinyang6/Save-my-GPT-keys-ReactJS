@@ -10,17 +10,14 @@ A simple desktop app to store your AI service API keys (ChatGPT, Gemini, etc.) l
 
 ## Screenshots
 
-### Main View
-![Main View](images/main_interface.png)
-View and manage your saved keys
+View and manage your saved keys:<br>
+<img src="images/main_interface.png" width="400" alt="Main View"><br><br>
 
-### Add New Key
-![Add Key](images/add_key.png)
-Add a new provider key
+Add a new provider key:<br>
+<img src="images/add_key.png" width="400" alt="Add Key"><br><br>
 
-### Delete Keys
-![Delete](images/delete_confirm.png)
-Confirm before deleting
+Delete confirmation:<br>
+<img src="images/delete_confirm.png" width="400" alt="Delete"><br><br>
 
 ## How to use
 
