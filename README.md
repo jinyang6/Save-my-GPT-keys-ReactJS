@@ -6,6 +6,7 @@ A simple desktop app to store your AI service API keys (ChatGPT, Gemini, etc.) l
 
 - Save API keys locally in your user files
 - Organize keys by provider (ChatGPT, Gemini)
+- Provider list grows as you add new providers
 - Basic functions: add, copy, edit, delete keys
 
 ## Screenshots
@@ -22,7 +23,8 @@ Delete confirmation:<br>
 ## How to use
 
 1. Click "+" to add a new key
-2. Fill in the provider, name, and your API key
-3. Use the copy/edit/delete icons to manage keys
+2. Fill in the provider (autocompletes from previously used providers)
+3. Fill in the name and your API key
+4. Use the copy/edit/delete icons to manage keys
 
 Note: All keys are stored locally in your user files. The app simply helps you organize them.
