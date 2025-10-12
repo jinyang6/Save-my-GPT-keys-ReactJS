@@ -1,0 +1,42 @@
+appId: com.jinyang.savemykeys
+productName: Save My Keys
+copyright: Copyright © 2025 jinyang
+
+directories:
+  output: dist
+  buildResources: assets
+
+files:
+  - dist/**/*
+  - src/**/*
+  - assets/**/*
+  - package.json
+  - "!**/*.md"
+  - "!node_modules"
+
+extraResources:
+  - from: assets
+    to: assets
+    filter:
+      - "**/*"
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: assets/icon.ico
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  allowElevation: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Save My Keys
+  artifactName: ${productName}-Setup-${version}.${ext}
+  deleteAppDataOnUninstall: false
+  installerIcon: assets/icon.ico
+  uninstallerIcon: assets/icon.ico
+  installerHeader: assets/icon.ico
+  installerHeaderIcon: assets/icon.ico

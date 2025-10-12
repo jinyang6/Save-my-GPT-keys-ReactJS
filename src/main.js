@@ -34,11 +34,6 @@ const getIconPath = () => {
 let mainWindow = null; // the main window object
 let tray = null; // the tray object
 
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) {
-  app.quit();
-}
-
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
